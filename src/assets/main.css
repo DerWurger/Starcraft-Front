@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Audiowide&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#app{
+  overflow: auto;
+}
+
+:root {
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+*, *::before, *::after {
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+[data-theme='zerg']{
+  --font-body: 'Metal Mania', system-ui;
+  --font-heading: 'Nosifer', sans-serif;
+}
+
+[data-theme='terran'] {
+  --font-body: 'Orbitron', curvsive;
+  --font-heading: 'Black Ops One', sans-serif;
+}
+
+[data-theme='protoss'] {
+  --font-body: 'Audiowide', cursive;
+  --font-heading: 'Unica One', sans-serif;
+}
+
+[data-theme='terran'] body{
+  background-image: url('@/assets/images/terran-bg.png');
+}
+
+[data-theme='protoss'] body {
+  background-image: url('@/assets/images/protoss-bg.png');
+}
+
+.font-body {
+  @apply text-base;
+  font-family: var(--font-body), serif;
+}
+
+.font-heading {
+  @apply text-4xl tracking-wide uppercase;
+  font-family: var(--font-heading), fantasy;
+}
